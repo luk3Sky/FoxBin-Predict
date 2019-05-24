@@ -1,1 +1,1 @@
-web: daphne predictengine.asgi:application
+web: daphne predictengine.asgi

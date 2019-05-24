@@ -11,7 +11,7 @@ class BinaryConsumer(AsyncConsumer):
         })
 
     async def websocket_receive(self, event):
-        print("connected", event)
+        print("recieved", event)
         await self.send({
             "type": "websocket.send",
             "text": event["text"],

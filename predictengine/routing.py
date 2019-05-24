@@ -6,7 +6,7 @@ from channels.security.websocket import AllowedHostsOriginValidator, OriginValid
 from foxbinary.consumers import BinaryConsumer
 
 application = ProtocolTypeRouter({
-    # WebSocket chat handler
+    # WebSocket handler
     "websocket": AllowedHostsOriginValidator(
     	AuthMiddlewareStack(
 	        URLRouter(
