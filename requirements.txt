@@ -3,6 +3,7 @@ async-timeout==3.0.1
 attrs==19.1.0
 autobahn==19.5.1
 Automat==0.7.0
+certifi==2019.3.9
 channels==2.2.0
 constantly==15.1.0
 daphne==2.3.0
@@ -12,8 +13,8 @@ django-heroku==0.3.1
 hyperlink==19.0.0
 idna==2.8
 incremental==17.5.0
+pipenv==2018.11.26
 psycopg2==2.8.2
-PyHamcrest==1.9.0
 pypiwin32==223
 pytz==2019.1
 pywin32==224
@@ -22,4 +23,6 @@ sqlparse==0.3.0
 Twisted==19.2.0
 txaio==18.8.1
 whitenoise==4.1.2
+virtualenv==16.5.0
+virtualenv-clone==0.5.3
 zope.interface==4.6.0
