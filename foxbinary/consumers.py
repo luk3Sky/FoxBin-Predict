@@ -12,9 +12,13 @@ class BinaryConsumer(AsyncConsumer):
 
     async def websocket_receive(self, event):
         print("recieved", event)
+        text_key = event.get('text', None)
+        if text_key is not None:
+            payload = json.loads(text_key)
+        print(payload) 
         await self.send({
             "type": "websocket.send",
-            "text": event["text"],
+            "text": "recieved tick value",
         })
 
     async def websocket_disconnect(self, event):
