@@ -10,13 +10,6 @@ import subprocess
 from django.contrib.auth import get_user_model
 from channels.consumer import SyncConsumer, AsyncConsumer
 
-# we need to redefine our metric function in order 
-# to use it when loading the model 
-# def auc(y_true, y_pred):
-#     auc = tf.metrics.auc(y_true, y_pred)[1]
-#     keras.backend.get_session().run(tf.local_variables_initializer())
-#     return auc
-
 class BinaryConsumer(AsyncConsumer):
     async def websocket_connect(self, event):
     	print("connected", event)
@@ -43,6 +36,8 @@ class BinaryConsumer(AsyncConsumer):
         await self.send({
             "type": "websocket.send",
             "text": "recieved tick value",
+          
+          
            # "array": array
         })
 
