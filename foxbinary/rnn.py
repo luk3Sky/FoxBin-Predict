@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # Importing the training set
-dataset_train = pd.read_csv('Google_Stock_Price_Train.csv')
+path = "C:\\Users\\Devin Gallage\\Downloads\\foxbin\\FoxBin-Predict-master\\train_data.csv"
+
+dataset_train = pd.read_csv(path)
 training_set = dataset_train.iloc[:, 1:2].values
 
 
@@ -18,7 +20,7 @@ training_set_scaled = sc.fit_transform(training_set)
 
 X_train = []
 y_train = []
-for i in range(60, 3900):
+for i in range(60, 3700):
     X_train.append(training_set_scaled[i-60:i, 0])
     y_train.append(training_set_scaled[i, 0])
 X_train, y_train = np.array(X_train), np.array(y_train)
@@ -62,6 +64,7 @@ regressor.add(Dense(units = 1))
 regressor.compile(optimizer = 'adam', loss = 'mean_squared_error')
 
 # Fitting the RNN to the Training set
-regressor.fit(X_train, y_train, epochs = 10, batch_size = 32 )
+regressor.fit(X_train, y_train, epochs = 100, batch_size = 32 )
+
 
 regressor.save('model.h5')
